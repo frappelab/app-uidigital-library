@@ -23,5 +23,5 @@ Ejecutar los siguientes pasos
 - aceder  mediante la url http://app-uidigital-library.test/
 
 
-opcional para la creación de base de datos se adjunta archivo de scrip de base de datos app-uidigital-library.sql
+opcional para la creación de base de datos se adjunta archivo de script de base de datos app-uidigital-library.sql
 
