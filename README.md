@@ -23,5 +23,11 @@ Ejecutar los siguientes pasos
 - aceder  mediante la url http://app-uidigital-library.test/
 
 
+## Autores
+
+- Carlos Andres Hernandez Vega
+- Miguel Angel Chaparro
+
+
 opcional para la creación de base de datos se adjunta archivo de script de base de datos app-uidigital-library.sql
 
