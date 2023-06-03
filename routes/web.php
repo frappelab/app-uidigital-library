@@ -26,9 +26,4 @@ Route::resource('authors', AuthorController::class);
 Route::resource('books', BookController::class);
 
 Route::post('/', 'App\Http\Controllers\BorrowedBookController@BorrewedBookSave')->name('BorrewedBookSave');
-// Route::group(function () {
-//     Route::resource('authors', AuthorController::class);
-//     // Route::resource('users', UserController::class);
-//     // Route::resource('posts', PostController::class);
-//     // Route::resource('categories', CategoryController::class);
-// });
+
