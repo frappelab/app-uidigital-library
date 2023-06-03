@@ -21,7 +21,6 @@
         </div>
     @endif
 
-
     <form action="{{ route('books.store') }}" method="POST">
         @csrf
 
@@ -53,13 +52,13 @@
             <div class="col-xs-12 col-sm-12 col-md-12  mb-16">
                 <div class="form-group">
                     <strong>ISBN:</strong>
-                    <input type="text" name="isbn" class="form-control" placeholder="ISBN">
+                    <input type="number" name="isbn" class="form-control" placeholder="ISBN">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 mb-16">
                 <div class="form-group">
                     <strong>No Páginas:</strong>
-                    <input type="text" name="pages" class="form-control" placeholder="No páginas">
+                    <input type="number" name="pages" class="form-control" placeholder="No páginas">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 mb-16">
@@ -81,7 +80,6 @@
                 <button type="submit" class="btn btn-ui-primary">Guardar</button>
             </div>
         </div>
-
-
+        
     </form>
 @endsection

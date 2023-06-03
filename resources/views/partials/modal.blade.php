@@ -53,11 +53,11 @@
                             <div class="book-share__description__date">
                                 <div class="form-group">
                                     <strong>Fecha prestamo:</strong>
-                                    <input value="<?php echo date('Y-m-d'); ?>" class="calendar" name="loan_date" type="date">
+                                    <input disabled value="<?php echo date('Y-m-d'); ?>" class="calendar" name="loan_date" type="date">
                                 </div>
                                 <div class="form-group">
                                     <strong>Fecha entrega:</strong>
-                                    <input class="calendar" name="delivery_date" type="date">
+                                    <input id="datepicker" class="calendar" min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime ('+10 day')); ?>" name="delivery_date" type="date">
                                 </div>
                             </div>
                         </div>
@@ -68,11 +68,6 @@
                     <button type="submit" class="btn btn-primary">Guardar Cambios</button>
                 </div>
             </form>
-            <script>
-                $(document).ready(function() {
-                    $('#datePicker').val(new Date().toDateInputValue());
-                });​
-            </script>
         </div>
     </div>
 </div>

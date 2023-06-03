@@ -15,6 +15,7 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     <!-- Scripts -->
+    <!--  <script src="{{ asset('js/jquery.min.js') }}"></script> -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 
@@ -60,7 +61,7 @@
                             </li>
 
                             {{-- <li><a class="nav-link item-menu" href="{{ url('/home') }}">Prestamos</a></li> --}}
-                            
+
 
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"

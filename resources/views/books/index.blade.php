@@ -65,6 +65,5 @@
     <div class="pull-right mb-24">
         <a class="btn btn-ui-primary" href="{{ route('books.create') }}">Crear libro</a>
     </div>
-
     {!! $books->links() !!}
 @endsection

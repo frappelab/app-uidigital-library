@@ -13,7 +13,7 @@ class AuthorController extends Controller
     public function index()
     {
         $authors = Author::latest()->paginate(5);
-        return view('authors.index',compact('authors'))
+        return view('authors.index', compact('authors'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -34,11 +34,11 @@ class AuthorController extends Controller
             'name' => 'required',
             'lastname' => 'required',
         ]);
-    
+
         Author::create($request->all());
-    
+
         return redirect()->route('authors.index')
-                        ->with('success','Autor creado!');
+            ->with('success', 'Autor creado!');
     }
 
     /**
@@ -46,7 +46,7 @@ class AuthorController extends Controller
      */
     public function show(Author $author)
     {
-        return view('authors.show',compact('author'));
+        return view('authors.show', compact('author'));
     }
 
     /**
@@ -54,7 +54,7 @@ class AuthorController extends Controller
      */
     public function edit(Author $author)
     {
-        return view('authors.edit',compact('author')); //->with('categories', Category::all());
+        return view('authors.edit', compact('author')); //->with('categories', Category::all());
     }
 
     /**
@@ -66,11 +66,11 @@ class AuthorController extends Controller
             'name' => 'required',
             'lastname' => 'required',
         ]);
-    
+
         $author->update($request->all());
-    
+
         return redirect()->route('authors.index')
-                        ->with('success','Autor actualizado!');
+            ->with('success', 'Autor actualizado!');
     }
 
     /**
@@ -79,8 +79,8 @@ class AuthorController extends Controller
     public function destroy(Author $author)
     {
         $author->delete();
-    
+
         return redirect()->route('authors.index')
-                        ->with('success','Autor eliminado!');
+            ->with('success', 'Autor eliminado!');
     }
 }

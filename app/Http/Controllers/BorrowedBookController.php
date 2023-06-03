@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\BorrowedBook;
 use App\Models\Stock;
+use DateTime;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\Log;
 
 class BorrowedBookController extends Controller
@@ -71,11 +73,15 @@ class BorrowedBookController extends Controller
     {
         request()->validate([
             'book_id' => 'required',
-            'loan_date' => 'required',
             'delivery_date' => 'required',
         ]);
 
-        BorrowedBook::create($request->all());
+        $borrowedBook = new BorrowedBook();
+        $borrowedBook->book_id = $request->input('book_id');
+        $borrowedBook->loan_date = date('Y-m-d');
+        $borrowedBook->delivery_date = $request->input('delivery_date');
+
+        $borrowedBook->save();
        
         Stock::where('book_id', $request->book_id)
             ->update([

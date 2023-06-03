@@ -34,9 +34,9 @@ class BookController extends Controller
     public function store(Request $request)
     {
         request()->validate([
-            'title' => 'required',
-            'isbn' => 'required',
-            'pages' => 'required',
+            'title' => 'required|max:100',
+            'isbn' => 'required|numeric|digits:13',
+            'pages' => 'required|numeric|min:5|max:1500',
             'cover' => 'required',
             'author_id' => 'required',
             'editorial_id' => 'required',
@@ -52,7 +52,7 @@ class BookController extends Controller
         $stock->total = 180;
         $stock->created_at = '2023-03-26 22:49:46';
         $stock->save();
-    
+
 
         return redirect()->route('books.index')
             ->with('success', 'Libro creado!');
@@ -81,10 +81,10 @@ class BookController extends Controller
     public function update(Request $request, Book $book)
     {
         request()->validate([
-            'title' => 'required',
-            'isbn' => 'required',
-            'pages' => 'required',
-            'cover' => 'required',
+            'title' => 'required|max:100',
+            'isbn' => 'required|numeric|digits:13',
+            'pages' => 'required|numeric|min:5|max:1500',
+            'cover' => 'required|max:255',
             'author_id' => 'required',
             'editorial_id' => 'required',
         ]);
@@ -100,6 +100,7 @@ class BookController extends Controller
      */
     public function destroy(Book $book)
     {
+
         $book->delete();
 
         return redirect()->route('books.index')
