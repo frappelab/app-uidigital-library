@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left mb-24">
-                <h2>Crear autor</h2>
+                <h2>Crear libro</h2>
             </div>
         </div>
     </div>
